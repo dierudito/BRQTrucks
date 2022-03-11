@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "rU1rRVX6EEJw79ro+a/COY1DPqcS3pzFYZCMTS1cFhO96f7ihvgS4mDT2ZKTk+IbagBFGHCngx0yrpQviqW+ug==",
+  "success": true,
+  "projectFilePath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bsi95319\\.nuget\\packages\\domainvalidation\\1.0.0\\domainvalidation.1.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'DomainValidation 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "DomainValidation",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
