@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using diegomoreno.Brq.Application.AppService.Base;
 using diegomoreno.Brq.Application.Interfaces;
-using diegomoreno.Brq.Application.ViewModels;
+using diegomoreno.Brq.Application.ViewModels.Trucks;
 using diegomoreno.Brq.domain.Entities;
 using diegomoreno.Brq.domain.Interfaces.Contexts.Uow;
 using diegomoreno.Brq.domain.Interfaces.Domain.Services;
@@ -30,8 +30,9 @@ public class TruckAppService : BaseAppService, ITruckAppService
     public async Task<IEnumerable<TruckViewModel>> GetAllAsync() =>
         Mapper.Map<IEnumerable<TruckViewModel>>(await _truckRepository.GetAllAsync().ConfigureAwait(false));
 
-    public async Task<TruckViewModel> AddAsync(TruckViewModel truckViewModel)
+    public async Task<TruckViewModel> AddAsync(AddTruckRequestViewModel request)
     {
+        var truckViewModel = Mapper.Map<TruckViewModel>(request);
         var truck = Mapper.Map<Truck>(truckViewModel);
         var response = await _truckService.AddAsync(truck).ConfigureAwait(false);
 
@@ -43,14 +44,16 @@ public class TruckAppService : BaseAppService, ITruckAppService
         return truckViewModel;
     }
 
-    public async Task<TruckViewModel> UpdateAsync(TruckViewModel truckViewModel)
+    public async Task<TruckViewModel> UpdateAsync(UpdateTruckRequestViewModel request)
     {
+        var truckViewModel = Mapper.Map<TruckViewModel>(request);
         var truck = Mapper.Map<Truck>(truckViewModel);
         var response = await _truckService.UpdateAsync(truck).ConfigureAwait(false);
 
         if (response is { ValidationResult.IsValid: true})
             if (!await CommitAsync())
                 AddValidationErrors(truck.ValidationResult, "An error occurred while saving the data in the database.");
+
         truckViewModel.ValidationResult = truck.ValidationResult;
 
         return truckViewModel;

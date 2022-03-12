@@ -6,6 +6,7 @@ using AutoMapper;
 using Bogus;
 using diegomoreno.Brq.Application.AppService;
 using diegomoreno.Brq.Application.ViewModels;
+using diegomoreno.Brq.Application.ViewModels.Trucks;
 using diegomoreno.Brq.domain.Entities;
 using diegomoreno.Brq.domain.Interfaces.Contexts.Uow;
 using diegomoreno.Brq.domain.Interfaces.Domain.Services;
@@ -114,6 +115,12 @@ public class TruckAppServiceTest
                 .WithValidationResult(validationResult)
                 .Build();
 
+        var request = new AddTruckRequestViewModel
+        {
+            SerieYear = truck.SerieYear,
+            SeriesEnum = truck.SeriesEnum
+        };
+
         var truckViewModel = new TruckViewModel
         {
             SerieYear = truck.SerieYear,
@@ -126,10 +133,11 @@ public class TruckAppServiceTest
         _truckService
             .Setup(t => t.AddAsync(It.IsAny<Truck>()))
             .ReturnsAsync(truck);
-        _mapper.Setup(m => m.Map<Truck>(It.IsAny<TruckViewModel>())).Returns(truck);
+        _mapper.Setup(m => m.Map<Truck>(It.IsAny<AddTruckRequestViewModel>())).Returns(truck);
+        _mapper.Setup(m => m.Map<TruckViewModel>(It.IsAny<AddTruckRequestViewModel>())).Returns(truckViewModel);
 
         // Act
-        var response = await _appService.AddAsync(truckViewModel).ConfigureAwait(false);
+        var response = await _appService.AddAsync(request).ConfigureAwait(false);
 
         // Assert
         response.Should().BeEquivalentTo(truckViewModel);
@@ -142,6 +150,12 @@ public class TruckAppServiceTest
         // Arrange
         const string expectedMessage = "An error occurred while saving the data in the database.";
         var truck = TruckBuilder.Novo().Build();
+        
+        var request = new AddTruckRequestViewModel
+        {
+            SerieYear = truck.SerieYear,
+            SeriesEnum = truck.SeriesEnum
+        };
 
         var truckViewModel = new TruckViewModel
         {
@@ -156,10 +170,11 @@ public class TruckAppServiceTest
             .Setup(t => t.AddAsync(It.IsAny<Truck>()))
             .ReturnsAsync(truck);
         _mapper.Setup(m => m.Map<Truck>(It.IsAny<TruckViewModel>())).Returns(truck);
+        _mapper.Setup(m => m.Map<TruckViewModel>(It.IsAny<AddTruckRequestViewModel>())).Returns(truckViewModel);
         _uow.Setup(u => u.CommitAsync()).ReturnsAsync(false);
 
         // Act
-        var response = await _appService.AddAsync(truckViewModel).ConfigureAwait(false);
+        var response = await _appService.AddAsync(request).ConfigureAwait(false);
 
         // Assert
         Assert.False(response.ValidationResult.IsValid);
@@ -173,6 +188,12 @@ public class TruckAppServiceTest
         // Arrange
         var truck = TruckBuilder.Novo().Build();
 
+        var request = new AddTruckRequestViewModel
+        {
+            SerieYear = truck.SerieYear,
+            SeriesEnum = truck.SeriesEnum
+        };
+
         var truckViewModel = new TruckViewModel
         {
             SerieYear = truck.SerieYear,
@@ -185,11 +206,12 @@ public class TruckAppServiceTest
         _truckService
             .Setup(t => t.AddAsync(It.IsAny<Truck>()))
             .ReturnsAsync(truck);
-        _mapper.Setup(m => m.Map<Truck>(It.IsAny<TruckViewModel>())).Returns(truck);
+        _mapper.Setup(m => m.Map<Truck>(It.IsAny<AddTruckRequestViewModel>())).Returns(truck);
+        _mapper.Setup(m => m.Map<TruckViewModel>(It.IsAny<AddTruckRequestViewModel>())).Returns(truckViewModel);
         _uow.Setup(u => u.CommitAsync()).ReturnsAsync(true);
 
         // Act
-        var response = await _appService.AddAsync(truckViewModel).ConfigureAwait(false);
+        var response = await _appService.AddAsync(request).ConfigureAwait(false);
 
         // Assert
         response.Should().BeEquivalentTo(truckViewModel);
@@ -212,6 +234,15 @@ public class TruckAppServiceTest
                 .Novo()
                 .WithValidationResult(validationResult)
                 .Build();
+        
+
+        var request = new UpdateTruckRequestViewModel
+        {
+            SerieYear = truck.SerieYear,
+            SeriesEnum = truck.SeriesEnum,
+            Id = truck.Id,
+            FabricationYer = truck.FabricationYear
+        };
 
         var truckViewModel = new TruckViewModel
         {
@@ -225,10 +256,11 @@ public class TruckAppServiceTest
         _truckService
             .Setup(t => t.UpdateAsync(It.IsAny<Truck>()))
             .ReturnsAsync(truck);
-        _mapper.Setup(m => m.Map<Truck>(It.IsAny<TruckViewModel>())).Returns(truck);
+        _mapper.Setup(m => m.Map<Truck>(It.IsAny<UpdateTruckRequestViewModel>())).Returns(truck);
+        _mapper.Setup(m => m.Map<TruckViewModel>(It.IsAny<UpdateTruckRequestViewModel>())).Returns(truckViewModel);
 
         // Act
-        var response = await _appService.UpdateAsync(truckViewModel).ConfigureAwait(false);
+        var response = await _appService.UpdateAsync(request).ConfigureAwait(false);
 
         // Assert
         response.Should().BeEquivalentTo(truckViewModel);
@@ -242,6 +274,14 @@ public class TruckAppServiceTest
         const string expectedMessage = "An error occurred while saving the data in the database.";
         var truck = TruckBuilder.Novo().Build();
 
+        var request = new UpdateTruckRequestViewModel
+        {
+            SerieYear = truck.SerieYear,
+            SeriesEnum = truck.SeriesEnum,
+            Id = truck.Id,
+            FabricationYer = truck.FabricationYear
+        };
+
         var truckViewModel = new TruckViewModel
         {
             SerieYear = truck.SerieYear,
@@ -254,11 +294,12 @@ public class TruckAppServiceTest
         _truckService
             .Setup(t => t.UpdateAsync(It.IsAny<Truck>()))
             .ReturnsAsync(truck);
-        _mapper.Setup(m => m.Map<Truck>(It.IsAny<TruckViewModel>())).Returns(truck);
+        _mapper.Setup(m => m.Map<Truck>(It.IsAny<UpdateTruckRequestViewModel>())).Returns(truck);
+        _mapper.Setup(m => m.Map<TruckViewModel>(It.IsAny<UpdateTruckRequestViewModel>())).Returns(truckViewModel);
         _uow.Setup(u => u.CommitAsync()).ReturnsAsync(false);
 
         // Act
-        var response = await _appService.UpdateAsync(truckViewModel).ConfigureAwait(false);
+        var response = await _appService.UpdateAsync(request).ConfigureAwait(false);
 
         // Assert
         Assert.False(response.ValidationResult.IsValid);
@@ -272,6 +313,14 @@ public class TruckAppServiceTest
         // Arrange
         var truck = TruckBuilder.Novo().Build();
 
+        var request = new UpdateTruckRequestViewModel
+        {
+            SerieYear = truck.SerieYear,
+            SeriesEnum = truck.SeriesEnum,
+            Id = truck.Id,
+            FabricationYer = truck.FabricationYear
+        };
+
         var truckViewModel = new TruckViewModel
         {
             SerieYear = truck.SerieYear,
@@ -284,11 +333,12 @@ public class TruckAppServiceTest
         _truckService
             .Setup(t => t.UpdateAsync(It.IsAny<Truck>()))
             .ReturnsAsync(truck);
-        _mapper.Setup(m => m.Map<Truck>(It.IsAny<TruckViewModel>())).Returns(truck);
+        _mapper.Setup(m => m.Map<Truck>(It.IsAny<UpdateTruckRequestViewModel>())).Returns(truck);
+        _mapper.Setup(m => m.Map<TruckViewModel>(It.IsAny<UpdateTruckRequestViewModel>())).Returns(truckViewModel);
         _uow.Setup(u => u.CommitAsync()).ReturnsAsync(true);
 
         // Act
-        var response = await _appService.UpdateAsync(truckViewModel).ConfigureAwait(false);
+        var response = await _appService.UpdateAsync(request).ConfigureAwait(false);
 
         // Assert
         response.Should().BeEquivalentTo(truckViewModel);

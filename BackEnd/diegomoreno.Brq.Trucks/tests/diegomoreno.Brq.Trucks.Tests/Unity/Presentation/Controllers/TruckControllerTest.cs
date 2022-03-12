@@ -9,6 +9,7 @@ using Moq.AutoMock;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using diegomoreno.Brq.Application.ViewModels.Trucks;
 using Xunit;
 
 namespace diegomoreno.Brq.Trucks.Tests.Unity.Presentation.Controllers;
@@ -110,7 +111,7 @@ public class TruckControllerTest
     {
         // Arrange
         const int expectedStatusCode = 200;
-        var truckViewModel = new TruckViewModel
+        var truckViewModel = new AddTruckRequestViewModel
         {
             SerieYear = _faker.Random.Number(2000, 3000),
             SeriesEnum = SeriesEnum.FH
@@ -123,7 +124,7 @@ public class TruckControllerTest
 
         // Assert
         Assert.Equal(expectedStatusCode, value);
-        _truckAppService.Verify(t => t.AddAsync(It.Is<TruckViewModel>(x =>
+        _truckAppService.Verify(t => t.AddAsync(It.Is<AddTruckRequestViewModel>(x =>
                 x.SerieYear == truckViewModel.SerieYear &&
                 x.SeriesEnum == truckViewModel.SeriesEnum)),
             Times.Once());
@@ -135,11 +136,12 @@ public class TruckControllerTest
     {
         // Arrange
         const int expectedStatusCode = 200;
-        var truckViewModel = new TruckViewModel
+        var truckViewModel = new UpdateTruckRequestViewModel
         {
             SerieYear = _faker.Random.Number(2000, 3000),
             SeriesEnum = SeriesEnum.FH,
-            Id = Guid.NewGuid()
+            Id = Guid.NewGuid(),
+            FabricationYer = _faker.Random.Number(2000, 3000)
         };
 
 
@@ -149,7 +151,7 @@ public class TruckControllerTest
 
         // Assert
         Assert.Equal(expectedStatusCode, value);
-        _truckAppService.Verify(t => t.UpdateAsync(It.Is<TruckViewModel>(x =>
+        _truckAppService.Verify(t => t.UpdateAsync(It.Is<UpdateTruckRequestViewModel>(x =>
                 x.SerieYear == truckViewModel.SerieYear &&
                 x.SeriesEnum == truckViewModel.SeriesEnum &&
                 x.Id == truckViewModel.Id)),

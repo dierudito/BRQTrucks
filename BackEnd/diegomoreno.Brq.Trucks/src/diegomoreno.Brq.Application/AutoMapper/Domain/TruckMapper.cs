@@ -1,7 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using AutoMapper;
-using diegomoreno.Brq.Application.ViewModels;
+﻿using AutoMapper;
+using diegomoreno.Brq.Application.ViewModels.Trucks;
 using diegomoreno.Brq.domain.Entities;
+using System.Diagnostics.CodeAnalysis;
 
 namespace diegomoreno.Brq.Application.AutoMapper.Domain;
 
@@ -11,5 +11,7 @@ public class TruckMapper : Profile
     public TruckMapper()
     {
         CreateMap<Truck, TruckViewModel>().ReverseMap();
+        CreateMap<UpdateTruckRequestViewModel, TruckViewModel>();
+        CreateMap<AddTruckRequestViewModel, TruckViewModel>();
     }
 }

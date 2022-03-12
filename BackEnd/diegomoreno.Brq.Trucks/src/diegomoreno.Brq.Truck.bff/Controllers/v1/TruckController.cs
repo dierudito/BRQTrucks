@@ -1,5 +1,6 @@
 ﻿using diegomoreno.Brq.Application.Interfaces;
 using diegomoreno.Brq.Application.ViewModels;
+using diegomoreno.Brq.Application.ViewModels.Trucks;
 using diegomoreno.Brq.bff.Attributes;
 using diegomoreno.Brq.bff.Controllers.Base;
 using Microsoft.AspNetCore.Mvc;
@@ -39,7 +40,7 @@ public class TruckController : WebApiControllerBase
     [HttpPost]
     [BrqRoute(Routes.Trucks.Add)]
     [Produces("application/json", Type = typeof(TruckViewModel))]
-    public async Task<IActionResult> AddAsync([FromBody] TruckViewModel request)
+    public async Task<IActionResult> AddAsync([FromBody] AddTruckRequestViewModel request)
     {
         return CustomResponse(await _appService.AddAsync(request).ConfigureAwait(false));
     }
@@ -47,7 +48,7 @@ public class TruckController : WebApiControllerBase
     [HttpPut]
     [BrqRoute(Routes.Trucks.Update)]
     [Produces("application/json", Type = typeof(TruckViewModel))]
-    public async Task<IActionResult> UpdateAsync([FromBody] TruckViewModel request)
+    public async Task<IActionResult> UpdateAsync([FromBody] UpdateTruckRequestViewModel request)
     {
         return CustomResponse(await _appService.UpdateAsync(request).ConfigureAwait(false));
     }
