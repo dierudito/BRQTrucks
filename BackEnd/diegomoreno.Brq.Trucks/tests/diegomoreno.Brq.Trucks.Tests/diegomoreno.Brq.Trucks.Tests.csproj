@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
     <PackageReference Include="Bogus" Version="34.0.1" />
+    <PackageReference Include="FluentAssertions" Version="6.5.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <PackageReference Include="Moq" Version="4.17.2" />
     <PackageReference Include="Moq.AutoMock" Version="3.3.0" />
@@ -24,11 +26,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\diegomoreno.Brq.Application\diegomoreno.Brq.Application.csproj" />
     <ProjectReference Include="..\..\src\diegomoreno.Brq.domain\diegomoreno.Brq.domain.csproj" />
+    <ProjectReference Include="..\..\src\diegomoreno.Brq.Truck.bff\diegomoreno.Brq.bff.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Shared\" />
+    <Folder Include="Unity\Application\AppService\" />
     <Folder Include="Unity\Domain\Entities\" />
+    <Folder Include="Unity\Presentation\Controllers\" />
   </ItemGroup>
 
 </Project>

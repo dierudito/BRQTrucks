@@ -1,7 +1,7 @@
 ﻿using System;
 using Bogus;
-using diegomoreno.Brq.domain.Entities;
 using diegomoreno.Brq.domain.Enums;
+using diegomoreno.Brq.Trucks.Tests.Shared;
 using Xunit;
 
 namespace diegomoreno.Brq.Trucks.Tests.Unity.Domain.Entities;
@@ -20,7 +20,11 @@ public class TruckTest
     public void ShouldNotAcceptToCreateAnInvalidTruck()
     {
         // Arrange / Act
-        var truck = new Truck(SeriesEnum.FH, _faker.Date.Past().Year);
+        var truck =
+            TruckBuilder
+                .Novo()
+                .WithSerieYear(_faker.Date.Past(3).Year)
+                .Build();
 
         // Assert
         Assert.False(truck.ItsValid());
@@ -31,12 +35,12 @@ public class TruckTest
     public void ShouldAcceptToCreateTruckSuccessfully()
     {
         // Arrange / Act
-        var truck = new Truck(SeriesEnum.FH, _faker.Date.Recent().Year);
+        var truck = TruckBuilder.Novo().Build();
 
         // Assert
         Assert.True(truck.ItsValid());
         Assert.Equal(SeriesEnum.FH, truck.SeriesEnum);
         Assert.Equal(_faker.Date.Recent().Year, truck.SerieYear);
-        Assert.Equal(DateTime.UtcNow.Year, truck.FabricationYer);
+        Assert.Equal(DateTime.UtcNow.Year, truck.FabricationYear);
     }
 }

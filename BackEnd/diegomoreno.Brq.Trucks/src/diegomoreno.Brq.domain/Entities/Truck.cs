@@ -5,13 +5,13 @@ namespace diegomoreno.Brq.domain.Entities;
 
 public class Truck : Entity
 {
-    public SeriesEnum SeriesEnum { get; private init; }
-    public int FabricationYer { get; init; }
-    public int SerieYear { get; private set; }
+    public SeriesEnum SeriesEnum { get; init; }
+    public int FabricationYear { get; init; }
+    public int SerieYear { get; init; }
 
     public Truck()
     {
-        FabricationYer = DateTime.UtcNow.Year;
+        FabricationYear = DateTime.UtcNow.Year;
     }
 
     public Truck(SeriesEnum seriesEnum, int serieYear) : this()

@@ -2,6 +2,5 @@
 
 public interface IContexto
 {
-    int Commit();
-    Task<int> CommitAsync();
+    Task<bool> CommitAsync();
 }

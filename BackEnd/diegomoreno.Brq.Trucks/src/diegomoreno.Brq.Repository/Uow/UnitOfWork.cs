@@ -14,14 +14,7 @@ public class UnitOfWork : IUnitOfWork
         _db = db;
     }
 
-    public int Commit()
-    {
-        return _db.SaveChanges();
-    }
-
-    public async Task<int> CommitAsync()
-    {
-        return await _db.SaveChangesAsync().ConfigureAwait(false);
-    }
+    public async Task<bool> CommitAsync() => 
+        await _db.SaveChangesAsync().ConfigureAwait(false) > 0;
 
 }

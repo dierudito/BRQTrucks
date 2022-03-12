@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using diegomoreno.Brq.domain.Entities;
 using diegomoreno.Brq.Repository.Mappings;
+using DomainValidation.Validation;
 
 namespace diegomoreno.Brq.Repository.Contexts.Entity;
 
@@ -23,6 +24,7 @@ public class TrucksDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new TruckMapping());
+        modelBuilder.Ignore<ValidationResult>();
         base.OnModelCreating(modelBuilder);
     }
 }

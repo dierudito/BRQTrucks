@@ -6,9 +6,8 @@ public interface IBaseRepository<T> : IAsyncDisposable where T : Entity
 {
     Task<T> AddAsync(T entidade);
     Task<T> UpdateAsync(T entidade);
-    Task<T> UpdateAsync(T updated, int key);
+    Task<T?> UpdateAsync(T? updated, int key);
     Task DeleteAsync(Guid id);
     Task<IEnumerable<T>> GetAllAsync();
-    Task<T> GetById(object id);
-    Task<int> CommitAsync();
+    Task<T?> GetById(Guid id);
 }

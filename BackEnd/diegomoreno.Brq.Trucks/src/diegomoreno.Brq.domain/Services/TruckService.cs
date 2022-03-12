@@ -18,7 +18,6 @@ public class TruckService : ITruckService
         if(truck.ItsValid() is false) return truck;
 
         await _truckRepository.AddAsync(truck).ConfigureAwait(false);
-        await _truckRepository.CommitAsync().ConfigureAwait(false);
 
         return truck;
     }
@@ -28,17 +27,13 @@ public class TruckService : ITruckService
         if (truck.ItsValid() is false) return truck;
 
         await _truckRepository.UpdateAsync(truck).ConfigureAwait(false);
-        await _truckRepository.CommitAsync().ConfigureAwait(false);
 
         return truck;
     }
 
-    public async Task DeleteAsync(Guid id)
-    {
+    public async Task DeleteAsync(Guid id) => 
         await _truckRepository.DeleteAsync(id).ConfigureAwait(false);
-        await _truckRepository.CommitAsync().ConfigureAwait(false);
 
-    }
-
-    public async ValueTask DisposeAsync() => await _truckRepository.DisposeAsync().ConfigureAwait(false);
+    public async ValueTask DisposeAsync() => 
+        await _truckRepository.DisposeAsync().ConfigureAwait(false);
 }

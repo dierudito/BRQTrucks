@@ -12,7 +12,7 @@ public class TruckMapping : IEntityTypeConfiguration<Truck>
     {
         builder.ToTable("Trucks").HasKey(x => x.Id);
         builder.Property(x => x.SerieYear);
-        builder.Property(x => x.FabricationYer);
+        builder.Property(x => x.FabricationYear);
         builder.Property(x => x.SeriesEnum).HasColumnType("varchar(3)");
     }
 }
