@@ -26,7 +26,9 @@ public static class DependencyInjectionConfig
             .AddScoped<IUnitOfWork, UnitOfWork>();
 
     private static IServiceCollection AddRepositories(this IServiceCollection services) =>
-        services.AddTransient<ITruckRepository, TruckRepository>();
+        services
+            .AddTransient<ITruckRepository, TruckRepository>()
+            .AddTransient<ISeriesRepository, SeriesRepository>();
 
     private static IServiceCollection AddServices(this IServiceCollection services) =>
         services.AddTransient<ITruckService, TruckService>();

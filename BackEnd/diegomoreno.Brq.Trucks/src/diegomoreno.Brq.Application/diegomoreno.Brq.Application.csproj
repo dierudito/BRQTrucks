@@ -10,6 +10,7 @@
     <Folder Include="AutoMapper\Domain\" />
     <Folder Include="Interfaces\" />
     <Folder Include="ViewModels\Base\" />
+    <Folder Include="ViewModels\Series\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,9 +1,11 @@
-﻿using System.Net;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Net;
 
 namespace diegomoreno.Brq.CrossCutting.IoC.Shared.Dtos;
 
+[ExcludeFromCodeCoverage]
 public class ResponseDto : ResponseDto<object> { }
-
+[ExcludeFromCodeCoverage]
 public class ResponseDto<T> where T : class, new()
 {
     public ResponseDto() { }

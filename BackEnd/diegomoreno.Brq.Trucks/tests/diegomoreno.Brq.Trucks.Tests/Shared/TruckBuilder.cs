@@ -1,13 +1,12 @@
 ﻿using Bogus;
 using diegomoreno.Brq.domain.Entities;
-using diegomoreno.Brq.domain.Enums;
 using ValidationResult = DomainValidation.Validation.ValidationResult;
 
 namespace diegomoreno.Brq.Trucks.Tests.Shared;
 
 public class TruckBuilder
 {
-    public SeriesEnum SeriesEnum { get; set; }
+    public Series Series { get; set; }
     public int SerieYear { get; set; }
     public ValidationResult ValidationResult { get; set; }
 
@@ -15,7 +14,7 @@ public class TruckBuilder
     {
         var faker = new Faker();
         WithSerieYear(faker.Date.Recent().Year);
-        WithSeriesEnum(SeriesEnum.FH);
+        WithSeries(SeriesBuilder.Novo().Build());
 
         ValidationResult validationResult = new();
         validationResult.Add(new ValidationResult());
@@ -24,9 +23,9 @@ public class TruckBuilder
 
     public static TruckBuilder Novo() => new();
 
-    public TruckBuilder WithSeriesEnum(SeriesEnum seriesEnum)
+    public TruckBuilder WithSeries(Series series)
     {
-        SeriesEnum = seriesEnum;
+        Series = series;
         return this;
     }
 
@@ -42,7 +41,7 @@ public class TruckBuilder
         return this;
     }
 
-    public Truck Build() => new(SeriesEnum, SerieYear)
+    public Truck Build() => new(Series, SerieYear)
     {
         ValidationResult = ValidationResult
     };

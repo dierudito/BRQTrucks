@@ -8,11 +8,9 @@
 
   <ItemGroup>
     <Folder Include="Entities\" />
-    <Folder Include="Enums\" />
     <Folder Include="Interfaces\Domain\Services\" />
     <Folder Include="Interfaces\Repositories\Base\" />
     <Folder Include="Configurations\" />
-    <Folder Include="Specifications\Trucks\" />
     <Folder Include="Validations\Trucks\" />
   </ItemGroup>
 

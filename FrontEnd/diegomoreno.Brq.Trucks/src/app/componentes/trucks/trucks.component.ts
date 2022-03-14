@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GetTruckResponseModel } from 'src/app/models/GetTruckResponseModel';
 import { TruckModel } from 'src/app/models/TruckModel';
 import { TruckService } from 'src/app/services/truck.service';
 
@@ -10,7 +11,7 @@ import { TruckService } from 'src/app/services/truck.service';
 })
 export class TrucksComponent implements OnInit {
 
-  truckList: TruckModel[] = [];
+  truckList: GetTruckResponseModel[] = [];
 
   constructor(
     private truckService: TruckService,
@@ -22,7 +23,7 @@ export class TrucksComponent implements OnInit {
 
   getAllTruck(): void{
     const observer ={
-      next: (_trucks: TruckModel[]) =>{
+      next: (_trucks: GetTruckResponseModel[]) =>{
         this.truckList = _trucks;
         },
         error: (error: any) => console.log(error)
@@ -37,7 +38,7 @@ export class TrucksComponent implements OnInit {
   deleteTruck(id: string): void{
     this.truckService
       .delete(id).subscribe(
-        (result: any) => {this.router.navigate(['truck'])}
+        () => {this.router.navigate([''])}
       );
   }
 }

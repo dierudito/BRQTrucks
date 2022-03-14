@@ -1,6 +1,6 @@
 ﻿using diegomoreno.Brq.Application.Interfaces;
-using diegomoreno.Brq.Application.ViewModels;
 using diegomoreno.Brq.Application.ViewModels.Trucks;
+using diegomoreno.Brq.Application.ViewModels.Trucks.Response;
 using diegomoreno.Brq.bff.Attributes;
 using diegomoreno.Brq.bff.Controllers.Base;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +19,7 @@ public class TruckController : WebApiControllerBase
 
     [HttpGet]
     [BrqRoute(Routes.Trucks.GetAll)]
-    [Produces("application/json", Type = typeof(List<TruckViewModel>))]
+    [Produces("application/json", Type = typeof(List<GetTruckResponseViewModel>))]
     public async Task<IActionResult> GetAll()
     {
         var trucks = await _appService.GetAllAsync().ConfigureAwait(false);
@@ -28,7 +28,7 @@ public class TruckController : WebApiControllerBase
 
     [HttpGet]
     [BrqRoute(Routes.Trucks.Get)]
-    [Produces("application/json", Type = typeof(TruckViewModel))]
+    [Produces("application/json", Type = typeof(GetTruckResponseViewModel))]
     public async Task<IActionResult> Get([FromRoute] Guid idTruck)
     {
         var truck = await _appService.GetAsync(idTruck).ConfigureAwait(false);
@@ -48,9 +48,9 @@ public class TruckController : WebApiControllerBase
     [HttpPut]
     [BrqRoute(Routes.Trucks.Update)]
     [Produces("application/json", Type = typeof(TruckViewModel))]
-    public async Task<IActionResult> UpdateAsync([FromBody] UpdateTruckRequestViewModel request)
+    public async Task<IActionResult> UpdateAsync([FromBody] UpdateTruckRequestViewModel request, [FromRoute] Guid idTruck)
     {
-        return CustomResponse(await _appService.UpdateAsync(request).ConfigureAwait(false));
+        return CustomResponse(await _appService.UpdateAsync(request, idTruck).ConfigureAwait(false));
     }
 
     [HttpDelete]

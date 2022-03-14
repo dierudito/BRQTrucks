@@ -15,6 +15,7 @@ public static class AutoMapperConfig
             mc.AllowNullDestinationValues = true;
 
             mc.AddProfile(new TruckMapper());
+            mc.AddProfile(new SeriesMapper());
         });
 
         var mapper = mappingConfig.CreateMapper();

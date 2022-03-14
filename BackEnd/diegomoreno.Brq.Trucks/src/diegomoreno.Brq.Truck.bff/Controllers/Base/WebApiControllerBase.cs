@@ -13,18 +13,11 @@ public class WebApiControllerBase : ControllerBase
     protected ActionResult CustomResponse(BaseViewModel? result = null, HttpStatusCode? statusResponse = null)
     {
         if (result is null)
-            statusResponse = HttpStatusCode.OK;
+            statusResponse = HttpStatusCode.NotFound;
         else
-            statusResponse ??= result.ValidationResult.IsValid ? HttpStatusCode.OK : HttpStatusCode.BadRequest;
+            statusResponse ??= result.ValidationResult == null || result.ValidationResult.IsValid ? HttpStatusCode.OK : HttpStatusCode.BadRequest;
 
-        var response = new ResponseDto
-        {
-            Status = statusResponse.Value,
-            Data = result,
-            BadRequestReason = ReturnRequestFailureObject(result?.ValidationResult)
-        };
-
-        return StatusCode(statusResponse.GetHashCode(), response);
+        return StatusCode(statusResponse.GetHashCode(), result);
     }
 
     private static BadRequestDto? ReturnRequestFailureObject(DomainValidation.Validation.ValidationResult? validationResult)

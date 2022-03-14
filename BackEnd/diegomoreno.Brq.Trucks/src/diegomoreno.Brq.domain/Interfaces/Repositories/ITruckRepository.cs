@@ -5,5 +5,4 @@ namespace diegomoreno.Brq.domain.Interfaces.Repositories;
 
 public interface ITruckRepository : IBaseRepository<Truck>
 {
-    
 }

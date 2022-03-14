@@ -8,8 +8,10 @@ public sealed class TruckIsConsistentValidation : Validator<Truck>
 {
     public TruckIsConsistentValidation()
     {
-        var truckSerieDate = new TruckMustHaveValidSerieDate();
+        var truckSerieDate = new TruckShouldHaveValidSerieDate();
+        var truckSeries = new TruckShouldBeOfSpecificSeries();
 
-        Add("TruckSerieDate", new Rule<Truck>(truckSerieDate, "The series year must be the current or subsequent year."));
+        Add("TruckSerieDate", new Rule<Truck>(truckSerieDate, "The series year should be the current or subsequent year."));
+        Add("TruckSeries", new Rule<Truck>(truckSeries, "Truck series not allowed."));
     }
 }

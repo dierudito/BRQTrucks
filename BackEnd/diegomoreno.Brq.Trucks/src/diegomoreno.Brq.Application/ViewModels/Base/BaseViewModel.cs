@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
+using ValidationResult = DomainValidation.Validation.ValidationResult;
 
 namespace diegomoreno.Brq.Application.ViewModels.Base;
 
@@ -7,5 +8,5 @@ namespace diegomoreno.Brq.Application.ViewModels.Base;
 public class BaseViewModel
 {
     [ScaffoldColumn(false)]
-    public DomainValidation.Validation.ValidationResult ValidationResult { get; set; }
+    public ValidationResult? ValidationResult { get; set; }
 }

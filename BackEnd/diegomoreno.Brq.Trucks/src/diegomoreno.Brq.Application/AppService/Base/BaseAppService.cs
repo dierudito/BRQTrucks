@@ -15,8 +15,9 @@ public abstract class BaseAppService
         Mapper = mapper;
     }
 
-    protected void AddValidationErrors(ValidationResult validationResult, string erro)
+    protected void AddValidationErrors(ValidationResult? validationResult, string erro)
     {
+        validationResult ??= new ValidationResult();
         validationResult.Add(new ValidationError(erro));
     }
 

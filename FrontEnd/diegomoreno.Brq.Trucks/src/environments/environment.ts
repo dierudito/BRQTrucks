@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serviceUrl: 'https://localhost:5001/diegomoreno/brq/bff/v1/trucks',
+  serviceUrl: 'https://localhost:5001/diegomoreno/brq/bff/v1',
 };
 
 /*

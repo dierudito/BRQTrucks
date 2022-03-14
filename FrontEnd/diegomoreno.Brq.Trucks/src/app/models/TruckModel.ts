@@ -1,6 +1,6 @@
 export interface TruckModel {
   id: string;
-  seriesEnum: string;
+  idSeries: string;
   fabricationYear: number;
   serieYear: number;
 }

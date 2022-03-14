@@ -13,6 +13,9 @@ public class TruckMapping : IEntityTypeConfiguration<Truck>
         builder.ToTable("Trucks").HasKey(x => x.Id);
         builder.Property(x => x.SerieYear);
         builder.Property(x => x.FabricationYear);
-        builder.Property(x => x.SeriesEnum).HasColumnType("varchar(3)");
+        builder
+            .HasOne(x => x.Series)
+            .WithMany()
+            .HasForeignKey(x => x.IdSeries);
     }
 }

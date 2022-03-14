@@ -3,6 +3,8 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import { ActivatedRoute, Router } from '@angular/router';
 import { TruckService } from 'src/app/services/truck.service';
 import { TruckModel } from '../../../models/TruckModel';
+import { SeriesModel } from '../../../models/SeriesModel';
+import { SeriesService } from '../../../services/series.service';
 
 @Component({
   selector: 'app-trucks-details',
@@ -13,7 +15,9 @@ export class TrucksDetailsComponent implements OnInit {
 
   truckId: any;
   truck = {} as TruckModel;
-  form: FormGroup = {} as FormGroup;
+  series: any[] = [];
+
+  form: FormGroup;
   stateSave = 'post';
   currentYear: number = new Date().getFullYear();
 
@@ -29,30 +33,24 @@ export class TrucksDetailsComponent implements OnInit {
     private fb: FormBuilder,
     private activatedRouter: ActivatedRoute,
     private router: Router,
-    private truckService: TruckService) { }
+    private truckService: TruckService,
+    private seriesService: SeriesService) {
+      this.form = new FormGroup({});
+      this.loadSeries();
+    }
 
   ngOnInit(): void {
     this.validation();
+    this.loadTruck();
   }
 
   public validation(): void{
     this.form = this.fb.group({
-      serieYear: [
-        '',
-        [
-          Validators.required,
-          Validators.min(this.currentYear),
-          Validators.max(this.currentYear+1)
-        ],
-      ],
-      fabricationYear: [
-        '',
-        [
-          Validators.required
-        ]
-      ],
-      seriesEnum: ['', Validators.required]
-    })
+      idSeries: ['', Validators.required],
+      fabricationYear: [this.currentYear],
+      serieYear: ['',
+        [Validators.required, Validators.min(this.currentYear), Validators.max(this.currentYear+1)]],
+    });
   }
 
   public resetForm(): void {
@@ -60,8 +58,17 @@ export class TrucksDetailsComponent implements OnInit {
     this.form.reset();
   }
 
-  public cssValidator(campoForm: FormControl | AbstractControl): any {
-    return { 'is-invalid': campoForm.errors && campoForm.touched };
+  public cancelUpdate(): void{
+    this.router.navigate(['']);
+  }
+
+  public loadSeries(): void{
+    this.seriesService.getAll()
+      .subscribe(
+        (series: any[]) =>{
+          this.series = series;
+        }
+      )
   }
 
   public loadTruck(): void{
@@ -97,7 +104,7 @@ export class TrucksDetailsComponent implements OnInit {
       }
 
       if(this.stateSave === 'put'){
-        this.truckService.put(this.truck)
+        this.truckService.put(this.truck, this.truckId)
           .subscribe(
             (result: any) =>  {
             this.router.navigate(['truck']);

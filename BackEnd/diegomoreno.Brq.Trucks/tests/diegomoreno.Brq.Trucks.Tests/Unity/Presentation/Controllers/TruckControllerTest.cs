@@ -1,15 +1,13 @@
 ﻿using Bogus;
 using diegomoreno.Brq.Application.Interfaces;
-using diegomoreno.Brq.Application.ViewModels;
+using diegomoreno.Brq.Application.ViewModels.Trucks;
 using diegomoreno.Brq.bff.Controllers.v1;
-using diegomoreno.Brq.domain.Enums;
-using diegomoreno.Brq.Trucks.Tests.Shared;
 using Moq;
 using Moq.AutoMock;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using diegomoreno.Brq.Application.ViewModels.Trucks;
+using diegomoreno.Brq.Application.ViewModels.Trucks.Response;
 using Xunit;
 
 namespace diegomoreno.Brq.Trucks.Tests.Unity.Presentation.Controllers;
@@ -37,7 +35,7 @@ public class TruckControllerTest
         var id = Guid.NewGuid();
         const int expectedStatusCode = 404;
 
-        _truckAppService.Setup(t => t.GetAsync(id)).ReturnsAsync((TruckViewModel)null);
+        _truckAppService.Setup(t => t.GetAsync(id)).ReturnsAsync((GetTruckResponseViewModel)null);
 
         // Act
         var response = await _truckController.Get(id).ConfigureAwait(false);
@@ -55,10 +53,10 @@ public class TruckControllerTest
         var id = Guid.NewGuid();
         const int expectedStatusCode = 200;
 
-        var truckViewModel = new TruckViewModel
+        var truckViewModel = new GetTruckResponseViewModel
         {
-            SerieYear = _faker.Random.Number(2000,3000),
-            SeriesEnum = SeriesEnum.FH,
+            SerieYear = _faker.Random.Number(2000, 3000),
+            Series = "FM",
             FabricationYear = _faker.Random.Number(2000, 3000),
             Id = id
         };
@@ -80,18 +78,17 @@ public class TruckControllerTest
     public async Task ShouldGetAllTruck()
     {
         // Arrange
-        var id = Guid.NewGuid();
         const int expectedStatusCode = 200;
 
-        var truckViewModel = new TruckViewModel
+        var truckViewModel = new GetTruckResponseViewModel
         {
             SerieYear = _faker.Random.Number(2000, 3000),
-            SeriesEnum = SeriesEnum.FH,
-            FabricationYear = _faker.Random.Number(2000, 3000),
+            IdSeries = Guid.NewGuid(),
+            Series = "FM",
             Id = Guid.NewGuid()
         };
 
-        var trucksViewModel = new List<TruckViewModel>{ truckViewModel};
+        var trucksViewModel = new List<GetTruckResponseViewModel> { truckViewModel };
 
         _truckAppService.Setup(t => t.GetAllAsync()).ReturnsAsync(trucksViewModel);
 
@@ -111,22 +108,32 @@ public class TruckControllerTest
     {
         // Arrange
         const int expectedStatusCode = 200;
-        var truckViewModel = new AddTruckRequestViewModel
+        var request = new AddTruckRequestViewModel
         {
             SerieYear = _faker.Random.Number(2000, 3000),
-            SeriesEnum = SeriesEnum.FH
+            IdSeries = Guid.NewGuid()
         };
+
+        var truckViewModel = new TruckViewModel
+        {
+            FabricationYear = _faker.Date.Recent().Year,
+            Id = Guid.NewGuid(),
+            IdSeries = request.IdSeries,
+            SerieYear = request.SerieYear
+        };
+
+        _truckAppService.Setup(t => t.AddAsync(It.IsAny<AddTruckRequestViewModel>())).ReturnsAsync(truckViewModel);
 
 
         // Act
-        var response = await _truckController.AddAsync(truckViewModel).ConfigureAwait(false);
+        var response = await _truckController.AddAsync(request).ConfigureAwait(false);
         var value = response.GetType().GetProperty("StatusCode")?.GetValue(response);
 
         // Assert
         Assert.Equal(expectedStatusCode, value);
         _truckAppService.Verify(t => t.AddAsync(It.Is<AddTruckRequestViewModel>(x =>
-                x.SerieYear == truckViewModel.SerieYear &&
-                x.SeriesEnum == truckViewModel.SeriesEnum)),
+                x.SerieYear == request.SerieYear &&
+                x.IdSeries == request.IdSeries)),
             Times.Once());
     }
 
@@ -136,25 +143,35 @@ public class TruckControllerTest
     {
         // Arrange
         const int expectedStatusCode = 200;
-        var truckViewModel = new UpdateTruckRequestViewModel
+        var request = new UpdateTruckRequestViewModel
         {
             SerieYear = _faker.Random.Number(2000, 3000),
-            SeriesEnum = SeriesEnum.FH,
+            IdSeries = Guid.NewGuid(),
             Id = Guid.NewGuid(),
             FabricationYer = _faker.Random.Number(2000, 3000)
         };
 
+        var truckViewModel = new TruckViewModel
+        {
+            FabricationYear = request.FabricationYer,
+            Id = request.Id,
+            IdSeries = request.IdSeries,
+            SerieYear = request.SerieYear
+        };
+
+        _truckAppService.Setup(t => t.UpdateAsync(It.IsAny<UpdateTruckRequestViewModel>(), It.IsAny<Guid>())).ReturnsAsync(truckViewModel);
+
 
         // Act
-        var response = await _truckController.UpdateAsync(truckViewModel).ConfigureAwait(false);
+        var response = await _truckController.UpdateAsync(request, request.Id).ConfigureAwait(false);
         var value = response.GetType().GetProperty("StatusCode")?.GetValue(response);
 
         // Assert
         Assert.Equal(expectedStatusCode, value);
         _truckAppService.Verify(t => t.UpdateAsync(It.Is<UpdateTruckRequestViewModel>(x =>
-                x.SerieYear == truckViewModel.SerieYear &&
-                x.SeriesEnum == truckViewModel.SeriesEnum &&
-                x.Id == truckViewModel.Id)),
+                x.SerieYear == request.SerieYear &&
+                x.IdSeries == request.IdSeries &&
+                x.Id == request.Id), request.Id),
             Times.Once());
     }
 

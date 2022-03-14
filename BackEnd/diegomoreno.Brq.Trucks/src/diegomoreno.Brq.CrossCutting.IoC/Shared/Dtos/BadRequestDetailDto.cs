@@ -1,5 +1,8 @@
-﻿namespace diegomoreno.Brq.CrossCutting.IoC.Shared.Dtos;
+﻿using System.Diagnostics.CodeAnalysis;
 
+namespace diegomoreno.Brq.CrossCutting.IoC.Shared.Dtos;
+
+[ExcludeFromCodeCoverage]
 public class BadRequestDetailDto
 {
     public string Descricao { get; init; }

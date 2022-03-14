@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Contexts\Entity\" />
     <Folder Include="Mappings\" />
+    <Folder Include="Migrations\" />
     <Folder Include="Repositories\Base\" />
     <Folder Include="Uow\" />
   </ItemGroup>

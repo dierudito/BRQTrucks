@@ -45,18 +45,15 @@ public class BaseRepository<T> : IBaseRepository<T> where T : Entity, new()
         if (entity != null) _db.Set<T>().Remove(entity);
     }
 
-    public async Task<IEnumerable<T>> GetAllAsync() =>
+    public virtual async Task<IEnumerable<T>> GetAllAsync() =>
         await _db.Set<T>().ToListAsync().ConfigureAwait(false);
 
 
-    public async Task<T?> GetById(Guid id)
+    public virtual async Task<T?> GetById(Guid id)
     {
         var result = await _db.Set<T>().FindAsync(id).ConfigureAwait(false);
         return result;
     }
-
-    public async Task<int> CommitAsync() => 
-        await _db.SaveChangesAsync().ConfigureAwait(false);
 
     public async ValueTask DisposeAsync()
     {

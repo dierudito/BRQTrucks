@@ -61,7 +61,7 @@ public class TruckServiceTest
             x.AddAsync(It.Is<Truck>(a =>
                 a.SerieYear == truck.SerieYear &&
                 a.FabricationYear == truck.FabricationYear &&
-                a.SeriesEnum == truck.SeriesEnum)), Times.Once);
+                a.IdSeries == truck.IdSeries)), Times.Once);
     }
 
 
@@ -99,7 +99,7 @@ public class TruckServiceTest
             x.UpdateAsync(It.Is<Truck>(a =>
                 a.SerieYear == truck.SerieYear &&
                 a.FabricationYear == truck.FabricationYear &&
-                a.SeriesEnum == truck.SeriesEnum)), Times.Once);
+                a.IdSeries == truck.IdSeries)), Times.Once);
     }
 
 
@@ -116,5 +116,14 @@ public class TruckServiceTest
         // Assert
         _mockRepository.Verify(x =>
             x.DeleteAsync(id), Times.Once);
+    }
+
+    [Fact]
+    [Trait("Dispose", "Dispose")]
+    public async Task ShouldCallDispose()
+    {
+        await _truckService.DisposeAsync().ConfigureAwait(false);
+        _mockRepository.Verify(x =>
+            x.DisposeAsync(), Times.Once);
     }
 }

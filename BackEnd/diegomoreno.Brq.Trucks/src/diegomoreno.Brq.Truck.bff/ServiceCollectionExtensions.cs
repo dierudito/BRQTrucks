@@ -15,5 +15,6 @@ internal static class ServiceCollectionExtensions
 
     private static IServiceCollection AddAppServices(this IServiceCollection services) =>
         services
-            .AddTransient<ITruckAppService, TruckAppService>();
+            .AddTransient<ITruckAppService, TruckAppService>()
+            .AddTransient<ISeriesAppService, SeriesAppService>();
 }

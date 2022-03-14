@@ -22,6 +22,33 @@ namespace diegomoreno.Brq.Repository.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("diegomoreno.Brq.domain.Entities.Series", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("varchar(2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Series", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("6cb23935-2cdc-488c-96bf-61fb8f90ea7d"),
+                            Name = "FH"
+                        },
+                        new
+                        {
+                            Id = new Guid("2a0a4549-c1c2-472a-8639-1365446ac22f"),
+                            Name = "FM"
+                        });
+                });
+
             modelBuilder.Entity("diegomoreno.Brq.domain.Entities.Truck", b =>
                 {
                     b.Property<Guid>("Id")
@@ -31,16 +58,28 @@ namespace diegomoreno.Brq.Repository.Migrations
                     b.Property<int>("FabricationYear")
                         .HasColumnType("int");
 
+                    b.Property<Guid>("IdSeries")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("SerieYear")
                         .HasColumnType("int");
 
-                    b.Property<string>("SeriesEnum")
-                        .IsRequired()
-                        .HasColumnType("varchar(3)");
-
                     b.HasKey("Id");
 
+                    b.HasIndex("IdSeries");
+
                     b.ToTable("Trucks", (string)null);
+                });
+
+            modelBuilder.Entity("diegomoreno.Brq.domain.Entities.Truck", b =>
+                {
+                    b.HasOne("diegomoreno.Brq.domain.Entities.Series", "Series")
+                        .WithMany()
+                        .HasForeignKey("IdSeries")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Series");
                 });
 #pragma warning restore 612, 618
         }

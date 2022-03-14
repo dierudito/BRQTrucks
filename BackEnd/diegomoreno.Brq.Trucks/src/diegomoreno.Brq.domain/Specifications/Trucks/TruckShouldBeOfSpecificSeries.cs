@@ -3,9 +3,9 @@ using DomainValidation.Interfaces.Specification;
 
 namespace diegomoreno.Brq.domain.Specifications.Trucks;
 
-public class TruckMustHaveValidSerieDate : ISpecification<Truck>
+public class TruckShouldBeOfSpecificSeries : ISpecification<Truck>
 {
     public bool IsSatisfiedBy(Truck truck) =>
-        truck.SerieYear == DateTime.UtcNow.Year || 
-        truck.SerieYear == DateTime.UtcNow.AddYears(1).Year;
+        truck.Series.Name.Equals("FM") ||
+        truck.Series.Name.Equals("FH");
 }

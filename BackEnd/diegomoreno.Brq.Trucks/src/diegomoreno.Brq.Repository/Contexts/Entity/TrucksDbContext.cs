@@ -20,11 +20,15 @@ public class TrucksDbContext : DbContext
     }
 
     public DbSet<Truck> Trucks { get; set; }
+    public DbSet<Series> Series { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new TruckMapping());
+        modelBuilder.ApplyConfiguration(new SeriesMapping());
         modelBuilder.Ignore<ValidationResult>();
+
+        modelBuilder.Entity<Series>().HasData(new Series("FH"), new Series("FM"));
         base.OnModelCreating(modelBuilder);
     }
 }
