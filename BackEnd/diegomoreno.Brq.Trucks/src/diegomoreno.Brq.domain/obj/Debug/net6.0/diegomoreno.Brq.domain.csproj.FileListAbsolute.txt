@@ -10,3 +10,15 @@ C:\sources\pessoal\BRQTrucks\BackEnd\diegomoreno.Brq.Trucks\src\diegomoreno.Brq.
 C:\sources\pessoal\BRQTrucks\BackEnd\diegomoreno.Brq.Trucks\src\diegomoreno.Brq.domain\obj\Debug\net6.0\diegomoreno.Brq.domain.dll
 C:\sources\pessoal\BRQTrucks\BackEnd\diegomoreno.Brq.Trucks\src\diegomoreno.Brq.domain\obj\Debug\net6.0\ref\diegomoreno.Brq.domain.dll
 C:\sources\pessoal\BRQTrucks\BackEnd\diegomoreno.Brq.Trucks\src\diegomoreno.Brq.domain\obj\Debug\net6.0\diegomoreno.Brq.domain.pdb
+C:\sources\pessoal\BRQTrucksNew\BackEnd\diegomoreno.Brq.Trucks\src\diegomoreno.Brq.domain\bin\Debug\net6.0\diegomoreno.Brq.domain.deps.json
+C:\sources\pessoal\BRQTrucksNew\BackEnd\diegomoreno.Brq.Trucks\src\diegomoreno.Brq.domain\bin\Debug\net6.0\diegomoreno.Brq.domain.dll
+C:\sources\pessoal\BRQTrucksNew\BackEnd\diegomoreno.Brq.Trucks\src\diegomoreno.Brq.domain\bin\Debug\net6.0\ref\diegomoreno.Brq.domain.dll
+C:\sources\pessoal\BRQTrucksNew\BackEnd\diegomoreno.Brq.Trucks\src\diegomoreno.Brq.domain\bin\Debug\net6.0\diegomoreno.Brq.domain.pdb
+C:\sources\pessoal\BRQTrucksNew\BackEnd\diegomoreno.Brq.Trucks\src\diegomoreno.Brq.domain\obj\Debug\net6.0\diegomoreno.Brq.domain.csproj.AssemblyReference.cache
+C:\sources\pessoal\BRQTrucksNew\BackEnd\diegomoreno.Brq.Trucks\src\diegomoreno.Brq.domain\obj\Debug\net6.0\diegomoreno.Brq.domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\sources\pessoal\BRQTrucksNew\BackEnd\diegomoreno.Brq.Trucks\src\diegomoreno.Brq.domain\obj\Debug\net6.0\diegomoreno.Brq.domain.AssemblyInfoInputs.cache
+C:\sources\pessoal\BRQTrucksNew\BackEnd\diegomoreno.Brq.Trucks\src\diegomoreno.Brq.domain\obj\Debug\net6.0\diegomoreno.Brq.domain.AssemblyInfo.cs
+C:\sources\pessoal\BRQTrucksNew\BackEnd\diegomoreno.Brq.Trucks\src\diegomoreno.Brq.domain\obj\Debug\net6.0\diegomoreno.Brq.domain.csproj.CoreCompileInputs.cache
+C:\sources\pessoal\BRQTrucksNew\BackEnd\diegomoreno.Brq.Trucks\src\diegomoreno.Brq.domain\obj\Debug\net6.0\diegomoreno.Brq.domain.dll
+C:\sources\pessoal\BRQTrucksNew\BackEnd\diegomoreno.Brq.Trucks\src\diegomoreno.Brq.domain\obj\Debug\net6.0\ref\diegomoreno.Brq.domain.dll
+C:\sources\pessoal\BRQTrucksNew\BackEnd\diegomoreno.Brq.Trucks\src\diegomoreno.Brq.domain\obj\Debug\net6.0\diegomoreno.Brq.domain.pdb

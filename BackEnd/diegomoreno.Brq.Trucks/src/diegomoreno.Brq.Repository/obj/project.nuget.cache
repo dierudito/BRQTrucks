@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6+ba8gHko+JL+R5Eso9nGdXt6o1PhAwuWxa1At5OZatEqFI2azv8KWHAfFOU6Hhk+DSKaKaZ69zd3son3qC19g==",
+  "dgSpecHash": "53VqCzikZSQ6VyWNaqO2+ltVp9iwlT7aEEBPbUcHgnSEt60IRzXTo9pnSQs3k1JR+f0uMCayQLYybIq2vNIa5w==",
   "success": true,
-  "projectFilePath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Repository\\diegomoreno.Brq.Repository.csproj",
+  "projectFilePath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Repository\\diegomoreno.Brq.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bsi95319\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",
     "C:\\Users\\bsi95319\\.nuget\\packages\\azure.identity\\1.3.0\\azure.identity.1.3.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rU1rRVX6EEJw79ro+a/COY1DPqcS3pzFYZCMTS1cFhO96f7ihvgS4mDT2ZKTk+IbagBFGHCngx0yrpQviqW+ug==",
+  "dgSpecHash": "2x2OFDTldv1LKq6+I85RKxdf3P02mF3sjKOkARgUdAhRk3hmleBHqd8bldpCCixLzVd4f00er/ZqLsquc+7+RA==",
   "success": true,
-  "projectFilePath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj",
+  "projectFilePath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bsi95319\\.nuget\\packages\\domainvalidation\\1.0.0\\domainvalidation.1.0.0.nupkg.sha512"
   ],

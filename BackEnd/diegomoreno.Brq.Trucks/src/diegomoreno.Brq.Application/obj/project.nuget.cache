@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eDgoqB9olYmHzIG57bqdxLv35YdDW2GWqVVQ39TphuN/qvtf73bcfiX4kuq27DSudo9GYmBndot8DwlQQRbBgA==",
+  "dgSpecHash": "Cp4y6T4xUNZPSHxXKsw8EWqlwlILtYi7k3PK1E73RnwxphUoStJA+IlkJfcdtfjzZinH0RwVtclQX+6Vvie1Fw==",
   "success": true,
-  "projectFilePath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Application\\diegomoreno.Brq.Application.csproj",
+  "projectFilePath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Application\\diegomoreno.Brq.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bsi95319\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\bsi95319\\.nuget\\packages\\domainvalidation\\1.0.0\\domainvalidation.1.0.0.nupkg.sha512",

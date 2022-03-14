@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Truck.bff\\diegomoreno.Brq.bff.csproj": {}
+    "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Truck.bff\\diegomoreno.Brq.bff.csproj": {}
   },
   "projects": {
-    "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Application\\diegomoreno.Brq.Application.csproj": {
+    "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Application\\diegomoreno.Brq.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Application\\diegomoreno.Brq.Application.csproj",
+        "projectUniqueName": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Application\\diegomoreno.Brq.Application.csproj",
         "projectName": "diegomoreno.Brq.Application",
-        "projectPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Application\\diegomoreno.Brq.Application.csproj",
+        "projectPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Application\\diegomoreno.Brq.Application.csproj",
         "packagesPath": "C:\\Users\\bsi95319\\.nuget\\packages\\",
-        "outputPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Application\\obj\\",
+        "outputPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bsi95319\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -30,8 +30,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj": {
-                "projectPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj"
+              "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj": {
+                "projectPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj"
               }
             }
           }
@@ -70,14 +70,14 @@
         }
       }
     },
-    "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.CrossCutting.IoC\\diegomoreno.Brq.CrossCutting.IoC.csproj": {
+    "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.CrossCutting.IoC\\diegomoreno.Brq.CrossCutting.IoC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.CrossCutting.IoC\\diegomoreno.Brq.CrossCutting.IoC.csproj",
+        "projectUniqueName": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.CrossCutting.IoC\\diegomoreno.Brq.CrossCutting.IoC.csproj",
         "projectName": "diegomoreno.Brq.CrossCutting.IoC",
-        "projectPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.CrossCutting.IoC\\diegomoreno.Brq.CrossCutting.IoC.csproj",
+        "projectPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.CrossCutting.IoC\\diegomoreno.Brq.CrossCutting.IoC.csproj",
         "packagesPath": "C:\\Users\\bsi95319\\.nuget\\packages\\",
-        "outputPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.CrossCutting.IoC\\obj\\",
+        "outputPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.CrossCutting.IoC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bsi95319\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -96,14 +96,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Application\\diegomoreno.Brq.Application.csproj": {
-                "projectPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Application\\diegomoreno.Brq.Application.csproj"
+              "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Application\\diegomoreno.Brq.Application.csproj": {
+                "projectPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Application\\diegomoreno.Brq.Application.csproj"
               },
-              "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj": {
-                "projectPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj"
+              "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj": {
+                "projectPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj"
               },
-              "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Repository\\diegomoreno.Brq.Repository.csproj": {
-                "projectPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Repository\\diegomoreno.Brq.Repository.csproj"
+              "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Repository\\diegomoreno.Brq.Repository.csproj": {
+                "projectPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Repository\\diegomoreno.Brq.Repository.csproj"
               }
             }
           }
@@ -150,14 +150,14 @@
         }
       }
     },
-    "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj": {
+    "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj",
+        "projectUniqueName": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj",
         "projectName": "diegomoreno.Brq.domain",
-        "projectPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj",
+        "projectPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj",
         "packagesPath": "C:\\Users\\bsi95319\\.nuget\\packages\\",
-        "outputPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\obj\\",
+        "outputPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bsi95319\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -212,14 +212,14 @@
         }
       }
     },
-    "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Repository\\diegomoreno.Brq.Repository.csproj": {
+    "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Repository\\diegomoreno.Brq.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Repository\\diegomoreno.Brq.Repository.csproj",
+        "projectUniqueName": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Repository\\diegomoreno.Brq.Repository.csproj",
         "projectName": "diegomoreno.Brq.Repository",
-        "projectPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Repository\\diegomoreno.Brq.Repository.csproj",
+        "projectPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Repository\\diegomoreno.Brq.Repository.csproj",
         "packagesPath": "C:\\Users\\bsi95319\\.nuget\\packages\\",
-        "outputPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Repository\\obj\\",
+        "outputPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bsi95319\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -238,8 +238,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj": {
-                "projectPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj"
+              "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj": {
+                "projectPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.domain\\diegomoreno.Brq.domain.csproj"
               }
             }
           }
@@ -296,14 +296,14 @@
         }
       }
     },
-    "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Truck.bff\\diegomoreno.Brq.bff.csproj": {
+    "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Truck.bff\\diegomoreno.Brq.bff.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Truck.bff\\diegomoreno.Brq.bff.csproj",
+        "projectUniqueName": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Truck.bff\\diegomoreno.Brq.bff.csproj",
         "projectName": "diegomoreno.Brq.bff",
-        "projectPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Truck.bff\\diegomoreno.Brq.bff.csproj",
+        "projectPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Truck.bff\\diegomoreno.Brq.bff.csproj",
         "packagesPath": "C:\\Users\\bsi95319\\.nuget\\packages\\",
-        "outputPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Truck.bff\\obj\\",
+        "outputPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Truck.bff\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bsi95319\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -322,8 +322,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.CrossCutting.IoC\\diegomoreno.Brq.CrossCutting.IoC.csproj": {
-                "projectPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.CrossCutting.IoC\\diegomoreno.Brq.CrossCutting.IoC.csproj"
+              "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.CrossCutting.IoC\\diegomoreno.Brq.CrossCutting.IoC.csproj": {
+                "projectPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.CrossCutting.IoC\\diegomoreno.Brq.CrossCutting.IoC.csproj"
               }
             }
           }

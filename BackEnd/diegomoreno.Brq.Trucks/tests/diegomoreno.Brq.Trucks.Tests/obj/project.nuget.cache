@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GN4GSw4FSVjXwZVbWXpAj/W7d/KGGp2yAOYatId/KskXW6jv/+6t80WSDk2LrcxDqTgCV9T670nHsb7c/abchQ==",
+  "dgSpecHash": "rZrTTeKgzA1v5zbz+tPHWRvjYBoRCyNUrHiav3WjtFpSvOWD/wwGksR8O7Rt0ZuIxxS/3RR9f1X6MPxM5MXlPA==",
   "success": true,
-  "projectFilePath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\tests\\diegomoreno.Brq.Trucks.Tests\\diegomoreno.Brq.Trucks.Tests.csproj",
+  "projectFilePath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\tests\\diegomoreno.Brq.Trucks.Tests\\diegomoreno.Brq.Trucks.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bsi95319\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\bsi95319\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",

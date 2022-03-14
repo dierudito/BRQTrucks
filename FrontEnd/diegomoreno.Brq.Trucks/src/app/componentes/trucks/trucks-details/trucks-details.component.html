@@ -28,7 +28,7 @@
           <div class="col-md-3" [style.display]="editMode? 'block':'none'">
             <label>Ano de Fabricação</label>
             <input type="number" class="form-control" [ngClass]="{'is-invalid': form.get('fabricationYear')?.errors && form.get('fabricationYear')?.touched}" formControlName="fabricationYear"
-            placeholder="Insira o Ano de Fabricação" [(ngModel)]="truck.fabricationYear" [disabled]="true">
+            placeholder="Insira o Ano de Fabricação" [(ngModel)]="truck.fabricationYear" [disabled]="false">
             <div *ngIf="f.fabricationYear.errors?.required" class="invalid-feedback">
               Ano de Fabricação é obrigatório.
             </div>

@@ -3617,11 +3617,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Truck.bff\\diegomoreno.Brq.bff.csproj",
+      "projectUniqueName": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Truck.bff\\diegomoreno.Brq.bff.csproj",
       "projectName": "diegomoreno.Brq.bff",
-      "projectPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Truck.bff\\diegomoreno.Brq.bff.csproj",
+      "projectPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Truck.bff\\diegomoreno.Brq.bff.csproj",
       "packagesPath": "C:\\Users\\bsi95319\\.nuget\\packages\\",
-      "outputPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Truck.bff\\obj\\",
+      "outputPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.Truck.bff\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bsi95319\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3640,8 +3640,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.CrossCutting.IoC\\diegomoreno.Brq.CrossCutting.IoC.csproj": {
-              "projectPath": "C:\\sources\\pessoal\\BRQTrucks\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.CrossCutting.IoC\\diegomoreno.Brq.CrossCutting.IoC.csproj"
+            "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.CrossCutting.IoC\\diegomoreno.Brq.CrossCutting.IoC.csproj": {
+              "projectPath": "C:\\sources\\pessoal\\BRQTrucksNew\\BackEnd\\diegomoreno.Brq.Trucks\\src\\diegomoreno.Brq.CrossCutting.IoC\\diegomoreno.Brq.CrossCutting.IoC.csproj"
             }
           }
         }
