@@ -28,4 +28,4 @@ FRONT
 
 Caso seja necessário alterar a url do endpoint da api, esta alteração deverá ser feita no arquivo environments.ts.
 
-Após realizar todas as configurações, baixada todas as dependências necessárias no projeto angular, api backend rodando, execute o comando npm start no console direcionado para a pasta raiz do projeto Web
+Após realizar todas as configurações, baixada todas as dependências necessárias no projeto angular (npm install), api backend rodando, execute o comando npm start no console direcionado para a pasta raiz do projeto Web
