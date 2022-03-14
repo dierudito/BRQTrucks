@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Entities\" />
+    <Folder Include="Interfaces\Domain\Services\" />
+    <Folder Include="Interfaces\Repositories\Base\" />
+    <Folder Include="Configurations\" />
+    <Folder Include="Validations\Trucks\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DomainValidation" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>

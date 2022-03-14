@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-md-12">
+    <form [formGroup]="form">
+      <div class="p-3">
+        <div class="form-row">
+          <div class="form-group">
+          <div class="col-md-3">
+            <label>Modelo</label>
+            <select formControlName="idSeries" class="form-control" [ngClass]="{'is-invalid': form.get('idSeries')?.errors && form.get('idSeries')?.touched}">
+              <option value="">Selecione...</option>
+              <option *ngFor="let item of series; let i=index" [value]="item.id">{{item.name}}</option>
+            </select>
+            <div *ngIf="f.idSeries.errors?.required" class="invalid-feedback">
+              Modelo é obrigatório.
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label>Ano Modelo</label>
+            <input type="number" class="form-control" [ngClass]="{'is-invalid': form.get('serieYear')?.errors && form.get('serieYear')?.touched}" formControlName="serieYear"
+            placeholder="Insira o Ano Modelo" [(ngModel)]="truck.serieYear">
+            <div *ngIf="f.serieYear.errors?.required" class="invalid-feedback">
+              Ano Modelo é obrigatório.
+            </div>
+            <div *ngIf="f.serieYear.errors?.min || f.serieYear.errors?.max" class="invalid-feedback">
+              Ano Modelo de ser atual ou o ano subsequente.
+            </div>
+          </div>
+          <div class="col-md-3" [style.display]="editMode? 'block':'none'">
+            <label>Ano de Fabricação</label>
+            <input type="number" class="form-control" [ngClass]="{'is-invalid': form.get('fabricationYear')?.errors && form.get('fabricationYear')?.touched}" formControlName="fabricationYear"
+            placeholder="Insira o Ano de Fabricação" [(ngModel)]="truck.fabricationYear" [disabled]="true">
+            <div *ngIf="f.fabricationYear.errors?.required" class="invalid-feedback">
+              Ano de Fabricação é obrigatório.
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <div class="d-flex">
+          <button class="btn btn-outline-secondary mr-auto border" (click)="cancelUpdate()">
+            Cancelar Alteração
+          </button>
+          <button class="btn btn-success" [disabled]="!form.valid" (click)="saveTruck()">
+            Salvar Caminhão
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
