@@ -1,0 +1,46 @@
+<h2>Caminhões</h2>
+
+<div class="card rounded shadow-sm p-3">
+  <div class="d-flex">
+    <div class="flex-fill pr-3">
+      <div class="form-group mb-2">
+        <div class="input-group-text"><div class="input-group-prepend">Filtro:</div></div>
+        <input type="text" class="form-control" placeholder="Buscar" [(ngModel)="filterList"]>
+      </div>
+    </div>
+    <div>
+      <a class="d-flex btn btn-outline-primary" href="#">
+        <i class="fa fa-plus-circle my-1"></i>
+        <b class="ml-1 d-none d-sm-block">Novo</b>
+      </a>
+    </div>
+
+  </div>
+
+  <table class="table table-striped">
+    <thead class="thead-white">
+      <th class="d-none">#</th>
+      <th>Modelo</th>
+      <th>Ano de Fabricação</th>
+      <th>Ano Modelo</th>
+      <th>Ações</th>
+    </thead>
+    <tbody *ngIf="truckList && truckList.length">
+      <tr *ngFor="let truck of truckListFilter">
+        <td>{{truck.id}}</td>
+        <td>{{truck.seriesEnum}}</td>
+        <td>{{truck.fabricationYer}}</td>
+        <td>{{truck.serieYear}}</td>
+        <td>
+            <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
+            <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot *ngIf="!truckList.length">
+      <tr>
+        <td colspan="5" class="text-center"></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

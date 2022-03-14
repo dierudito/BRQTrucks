@@ -1,0 +1,38 @@
+<h2>Caminhões</h2>
+
+<div class="card rounded shadow-sm p-3">
+  <div class="d-flex">
+    <div>
+      <a class="d-flex btn btn-outline-primary" routerLink="/truck/details">
+        <i class="fa fa-plus-circle my-1"></i>
+        <b class="ml-1 d-none d-sm-block">Novo</b>
+      </a>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead class="thead-white">
+      <th class="d-none">#</th>
+      <th>Modelo</th>
+      <th>Ano de Fabricação</th>
+      <th>Ano Modelo</th>
+      <th>Ações</th>
+    </thead>
+    <tbody *ngIf="truckList && truckList.length">
+      <tr *ngFor="let truck of truckList">
+        <td class="d-none">{{truck.id}}</td>
+        <td>{{truck.seriesEnum}}</td>
+        <td>{{truck.fabricationYear}}</td>
+        <td>{{truck.serieYear}}</td>
+        <td>
+            <button type="button" class="btn btn-primary btn-sm" (click)="truckDetails(truck.id)"><i class="fa fa-edit"></i>Editar</button>
+            <button type="button" class="btn btn-danger btn-sm" (click)="deleteTruck(truck.id)"><i class="fa fa-trash"></i>Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot *ngIf="!truckList.length">
+      <tr>
+        <td colspan="5" class="text-center"></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

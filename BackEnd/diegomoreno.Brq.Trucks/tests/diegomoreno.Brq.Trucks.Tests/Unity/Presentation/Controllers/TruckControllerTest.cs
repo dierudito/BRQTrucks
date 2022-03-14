@@ -59,7 +59,7 @@ public class TruckControllerTest
         {
             SerieYear = _faker.Random.Number(2000,3000),
             SeriesEnum = SeriesEnum.FH,
-            FabricationYer = _faker.Random.Number(2000, 3000),
+            FabricationYear = _faker.Random.Number(2000, 3000),
             Id = id
         };
 
@@ -87,7 +87,7 @@ public class TruckControllerTest
         {
             SerieYear = _faker.Random.Number(2000, 3000),
             SeriesEnum = SeriesEnum.FH,
-            FabricationYer = _faker.Random.Number(2000, 3000),
+            FabricationYear = _faker.Random.Number(2000, 3000),
             Id = Guid.NewGuid()
         };
 

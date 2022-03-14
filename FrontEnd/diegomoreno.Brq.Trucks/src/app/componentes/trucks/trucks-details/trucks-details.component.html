@@ -1,0 +1,50 @@
+<div class="row">
+  <div [ngClass]="{'col-md-8 pr-0': editMode, 'col-md-12': !editMode}">
+    <form [formGroup]="form">
+      <div class="p-3">
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label>Modelo</label>
+            <select formControlName="seriesEnum" class="form-control" [ngClass]="cssValidator(f.seriesEnum)">
+              <option value="0" selected>FH</option>
+              <option value="1" selected>FM</option>
+            </select>
+            <div *ngIf="f.seriesEnum.errors?.required" class="invalid-feedback">
+              Modelo é obrigatório.
+            </div>
+          </div>
+          <div class="form-group col-md-3">
+            <label>Ano Modelo</label>
+            <input type="text" class="form-control" [ngClass]="cssValidator(f.serieYear)" formControlName="serieYear"
+            placeholder="Insira o Ano Modelo" [(ngModel)]="truck.serieYear">
+            <div *ngIf="f.serieYear.errors?.required" class="invalid-feedback">
+              Ano Modelo é obrigatório.
+            </div>
+            <div *ngIf="f.serieYear.errors?.min || f.serieYear.errors?.max" class="invalid-feedback">
+              Ano Modelo de ser atual ou o ano subsequente.
+            </div>
+          </div>
+          <div class="form-group col-md-3">
+            <label>Ano de Fabricação</label>
+            <input type="text" class="form-control" [ngClass]="cssValidator(f.fabricationYear)" formControlName="fabricationYear"
+            placeholder="Insira o Ano de Fabricação" [(ngModel)]="truck.fabricationYear" [disabled]="true">
+            <div *ngIf="f.fabricationYear.errors?.required" class="invalid-feedback">
+              Ano de Fabricação é obrigatório.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <div class="d-flex">
+          <button class="btn btn-outline-secondary mr-auto border" (click)="resetForm()">
+            Cancelar Alteração
+          </button>
+          <button class="btn btn-success" [disabled]="!form.valid" (click)="saveTruck()">
+            Salvar Caminhão
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -15,6 +15,6 @@ public class TruckViewModel : BaseViewModel
     [Key]
     public Guid Id { get; set; }
     public SeriesEnum SeriesEnum { get; set; }
-    public int FabricationYer { get; set; }
+    public int FabricationYear { get; set; }
     public int SerieYear { get; set; }
 }

@@ -55,7 +55,7 @@ public class TruckAppServiceTest
         {
             SerieYear = truck.SerieYear,
             SeriesEnum = truck.SeriesEnum,
-            FabricationYer = truck.FabricationYear,
+            FabricationYear = truck.FabricationYear,
             ValidationResult = truck.ValidationResult,
             Id = truck.Id
         };
@@ -84,7 +84,7 @@ public class TruckAppServiceTest
         {
             SerieYear = truck.SerieYear,
             SeriesEnum = truck.SeriesEnum,
-            FabricationYer = truck.FabricationYear,
+            FabricationYear = truck.FabricationYear,
             ValidationResult = truck.ValidationResult,
             Id = truck.Id
         };
@@ -125,7 +125,7 @@ public class TruckAppServiceTest
         {
             SerieYear = truck.SerieYear,
             SeriesEnum = truck.SeriesEnum,
-            FabricationYer = truck.FabricationYear,
+            FabricationYear = truck.FabricationYear,
             ValidationResult = truck.ValidationResult,
             Id = truck.Id
         };
@@ -133,7 +133,7 @@ public class TruckAppServiceTest
         _truckService
             .Setup(t => t.AddAsync(It.IsAny<Truck>()))
             .ReturnsAsync(truck);
-        _mapper.Setup(m => m.Map<Truck>(It.IsAny<AddTruckRequestViewModel>())).Returns(truck);
+        _mapper.Setup(m => m.Map<Truck>(It.IsAny<TruckViewModel>())).Returns(truck);
         _mapper.Setup(m => m.Map<TruckViewModel>(It.IsAny<AddTruckRequestViewModel>())).Returns(truckViewModel);
 
         // Act
@@ -161,7 +161,7 @@ public class TruckAppServiceTest
         {
             SerieYear = truck.SerieYear,
             SeriesEnum = truck.SeriesEnum,
-            FabricationYer = truck.FabricationYear,
+            FabricationYear = truck.FabricationYear,
             ValidationResult = truck.ValidationResult,
             Id = truck.Id
         };
@@ -198,7 +198,7 @@ public class TruckAppServiceTest
         {
             SerieYear = truck.SerieYear,
             SeriesEnum = truck.SeriesEnum,
-            FabricationYer = truck.FabricationYear,
+            FabricationYear = truck.FabricationYear,
             ValidationResult = truck.ValidationResult,
             Id = truck.Id
         };
@@ -206,7 +206,7 @@ public class TruckAppServiceTest
         _truckService
             .Setup(t => t.AddAsync(It.IsAny<Truck>()))
             .ReturnsAsync(truck);
-        _mapper.Setup(m => m.Map<Truck>(It.IsAny<AddTruckRequestViewModel>())).Returns(truck);
+        _mapper.Setup(m => m.Map<Truck>(It.IsAny<TruckViewModel>())).Returns(truck);
         _mapper.Setup(m => m.Map<TruckViewModel>(It.IsAny<AddTruckRequestViewModel>())).Returns(truckViewModel);
         _uow.Setup(u => u.CommitAsync()).ReturnsAsync(true);
 
@@ -248,7 +248,7 @@ public class TruckAppServiceTest
         {
             SerieYear = truck.SerieYear,
             SeriesEnum = truck.SeriesEnum,
-            FabricationYer = truck.FabricationYear,
+            FabricationYear = truck.FabricationYear,
             ValidationResult = truck.ValidationResult,
             Id = truck.Id
         };
@@ -256,7 +256,7 @@ public class TruckAppServiceTest
         _truckService
             .Setup(t => t.UpdateAsync(It.IsAny<Truck>()))
             .ReturnsAsync(truck);
-        _mapper.Setup(m => m.Map<Truck>(It.IsAny<UpdateTruckRequestViewModel>())).Returns(truck);
+        _mapper.Setup(m => m.Map<Truck>(It.IsAny<TruckViewModel>())).Returns(truck);
         _mapper.Setup(m => m.Map<TruckViewModel>(It.IsAny<UpdateTruckRequestViewModel>())).Returns(truckViewModel);
 
         // Act
@@ -286,7 +286,7 @@ public class TruckAppServiceTest
         {
             SerieYear = truck.SerieYear,
             SeriesEnum = truck.SeriesEnum,
-            FabricationYer = truck.FabricationYear,
+            FabricationYear = truck.FabricationYear,
             ValidationResult = truck.ValidationResult,
             Id = truck.Id
         };
@@ -294,7 +294,7 @@ public class TruckAppServiceTest
         _truckService
             .Setup(t => t.UpdateAsync(It.IsAny<Truck>()))
             .ReturnsAsync(truck);
-        _mapper.Setup(m => m.Map<Truck>(It.IsAny<UpdateTruckRequestViewModel>())).Returns(truck);
+        _mapper.Setup(m => m.Map<Truck>(It.IsAny<TruckViewModel>())).Returns(truck);
         _mapper.Setup(m => m.Map<TruckViewModel>(It.IsAny<UpdateTruckRequestViewModel>())).Returns(truckViewModel);
         _uow.Setup(u => u.CommitAsync()).ReturnsAsync(false);
 
@@ -325,7 +325,7 @@ public class TruckAppServiceTest
         {
             SerieYear = truck.SerieYear,
             SeriesEnum = truck.SeriesEnum,
-            FabricationYer = truck.FabricationYear,
+            FabricationYear = truck.FabricationYear,
             ValidationResult = truck.ValidationResult,
             Id = truck.Id
         };
@@ -333,7 +333,7 @@ public class TruckAppServiceTest
         _truckService
             .Setup(t => t.UpdateAsync(It.IsAny<Truck>()))
             .ReturnsAsync(truck);
-        _mapper.Setup(m => m.Map<Truck>(It.IsAny<UpdateTruckRequestViewModel>())).Returns(truck);
+        _mapper.Setup(m => m.Map<Truck>(It.IsAny<TruckViewModel>())).Returns(truck);
         _mapper.Setup(m => m.Map<TruckViewModel>(It.IsAny<UpdateTruckRequestViewModel>())).Returns(truckViewModel);
         _uow.Setup(u => u.CommitAsync()).ReturnsAsync(true);
 

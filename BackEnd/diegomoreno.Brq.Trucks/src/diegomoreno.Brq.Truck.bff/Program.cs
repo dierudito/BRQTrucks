@@ -12,6 +12,7 @@ builder.Services.AddDbContext<TrucksDbContext>(options =>
 });
 
 builder.Services.AddControllers();
+builder.Services.AddCors();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -25,6 +26,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
+
+app.UseCors(cors =>
+    cors.AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowAnyOrigin()
+);
 
 app.MapControllers();
 

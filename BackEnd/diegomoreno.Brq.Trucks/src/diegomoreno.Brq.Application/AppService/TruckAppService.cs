@@ -37,7 +37,7 @@ public class TruckAppService : BaseAppService, ITruckAppService
         var response = await _truckService.AddAsync(truck).ConfigureAwait(false);
 
         if(response is {ValidationResult.IsValid: true}) 
-            if(!await CommitAsync())
+            if(!await CommitAsync().ConfigureAwait(false))
                 AddValidationErrors(truck.ValidationResult, "An error occurred while saving the data in the database.");
         truckViewModel.ValidationResult = truck.ValidationResult;
 
@@ -51,7 +51,7 @@ public class TruckAppService : BaseAppService, ITruckAppService
         var response = await _truckService.UpdateAsync(truck).ConfigureAwait(false);
 
         if (response is { ValidationResult.IsValid: true})
-            if (!await CommitAsync())
+            if (!await CommitAsync().ConfigureAwait(false))
                 AddValidationErrors(truck.ValidationResult, "An error occurred while saving the data in the database.");
 
         truckViewModel.ValidationResult = truck.ValidationResult;
@@ -59,8 +59,11 @@ public class TruckAppService : BaseAppService, ITruckAppService
         return truckViewModel;
     }
 
-    public async Task DeleteAsync(Guid id) => 
+    public async Task DeleteAsync(Guid id)
+    {
         await _truckService.DeleteAsync(id).ConfigureAwait(false);
+        await CommitAsync().ConfigureAwait(false);
+    }
 
     public async ValueTask DisposeAsync()
     {
